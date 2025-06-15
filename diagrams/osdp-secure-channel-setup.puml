@@ -1,0 +1,9 @@
+@startuml
+participant "ACU"
+participant "PD"
+"ACU" -> "PD":osdp_CHLNG (SCS 11),\nRND.A
+"PD" -> "ACU":osdp_CCRYPT (SCS 12),\ncUID, RND.B, Client Cryptogram
+"ACU" -> "PD":osdp_SCRYPT (SCS 13),\nServer Cryptogram
+"PD" -> "ACU":osdp_RMAC_I (SCS 14, status),\nInitial MAC
+@enduml
+
